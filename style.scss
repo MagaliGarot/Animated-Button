@@ -1,6 +1,4 @@
 /*-----------VAR-----------*/
-    /*-PICTURE-*/
-$sizepictureBed: 100px;
     /*-BORDER-*/
 $borderRadius: 25px;
     /*-COLOR-*/
@@ -57,12 +55,16 @@ body {
 /*--------BODY--------*/
 
 .container_button{
+    display:flex;
+    align-items: center;
     @include margin();
-    display: block;
     width: 660px;
     height: 200px;
     border-radius: $borderRadius;
     margin-top: 400px;
+    /*1 mettre transition sur element princiaple*/
+    /*Ensuite faire l'appel dans le hover*/
+    // transition: transform 0.5s;
 
     /*fond yellow light*/
     .container_button_fond{
@@ -70,9 +72,19 @@ body {
         justify-content: center;
         align-items: center;
         @include color(background,#f1d080);
+        /*PICTURE BED*/
+        background-image: url("Picture/green_double-room_icon-icons.com_59398-icon-icons.com.png");
+        background-repeat: no-repeat;
+        background-size: 100px;
+        background-position: center;
+        
         width: 200px;
         height: 200px;
+        
         border-radius: 25px 0px 0px 25px;
+
+         /*INVISIBLE*/
+         overflow: hidden;
     }
 
 
@@ -83,7 +95,6 @@ body {
           
             top: 30px;
             margin-right:100px;
-            overflow: hidden;
         }
 
         .container_button_fond_bag_Two{
@@ -93,54 +104,30 @@ body {
            
             top: 30px;
             margin-left:100px;
-            /*INVISIBLE*/
-            overflow: hidden;
-             /*ANIM TEST*/
-            // transition: all 1s ease-out;
+             /*ANIM*/
+            transition: all 1s ease-out;
         }
 
-        .container_button_fond_bed_center{
-            position: absolute;
-            z-index: 1;
-            width: $sizepictureBed;
-            filter: invert(50%);
-        }
+
+
 
         .container_button_fond:hover{
+            // transform: scale(1.5);
+
+            // transform:scale(1,1);
+            // transition-duration: 1s;
+  
+            .container_button_fond_bag_One{
+                margin-right:10px;
+                transition-duration: 1s;
+            }
 
             .container_button_fond_bag_Two{
-            animation-name: bagTwo;
-            animation-duration: 1s;
-            /*Nombre de fois quelle recommence*/
-            animation-iteration-count: 1;
-            animation-fill-mode:forwards;
-            /*Animation fluide*/
-            animation-timing-function: ease-in-out;
+                margin-left:10px;
+                transition-duration: 1s;
+            }
 
-        }
-            @keyframes bagTwo{
-                /*ETAPE DE TRANSFORMATIONS*/
-             0%{
-                 margin-left:120px;
-                 
-             }
-            
-             25%{
-                margin-left:60px;
-             }
-            
-             50%{
-                margin-left:40px;
-             }
-            
-             75%{
-                margin-left:20px;
-            }
-            
-            100%{
-                margin-left:5px;
-                }
-            }
+
         }
 
 }
