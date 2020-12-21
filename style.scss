@@ -5,10 +5,6 @@ $borderRadius: 25px;
 $backgroundWhite: white;
 $backgroundgraylight: #f8f7f5;
 $graybutton:#eff0f2;
-    /*-TEXT-*/
-$center: center;
-$marginTextBurger:35px 35px;
-
 /*-----------@Mixin-----------*/
 @mixin color($element, $value){
     #{$element} : $value;
@@ -64,7 +60,8 @@ body {
     margin-top: 400px;
     /*1 mettre transition sur element princiaple*/
     /*Ensuite faire l'appel dans le hover*/
-    // transition: transform 0.5s;
+    transition: transform 0.5s;
+    @include color(background,white);
 
     /*fond yellow light*/
     .container_button_fond{
@@ -72,6 +69,8 @@ body {
         justify-content: center;
         align-items: center;
         @include color(background,#f1d080);
+
+        pointer-events:none;
         /*PICTURE BED*/
         background-image: url("Picture/green_double-room_icon-icons.com_59398-icon-icons.com.png");
         background-repeat: no-repeat;
@@ -95,6 +94,9 @@ body {
           
             top: 30px;
             margin-right:100px;
+             /*ANIM*/
+             /*ALL -> TOUT*/
+             transition: all 1s ease-out;
         }
 
         .container_button_fond_bag_Two{
@@ -108,26 +110,22 @@ body {
             transition: all 1s ease-out;
         }
 
+}
 
+   /*HOVER TOUJOURS EN DEHORS --> ATTENTION*/
+   /*Pas plus de 2 agruments*/
+   .container_button:hover{
+    transform: scale(1.5);
+    transition-duration: 1s;
 
+    .container_button_fond_bag_One{
+        margin-right:10px;
+        transition-duration: 1s;
+    }
 
-        .container_button_fond:hover{
-            // transform: scale(1.5);
-
-            // transform:scale(1,1);
-            // transition-duration: 1s;
-  
-            .container_button_fond_bag_One{
-                margin-right:10px;
-                transition-duration: 1s;
-            }
-
-            .container_button_fond_bag_Two{
-                margin-left:10px;
-                transition-duration: 1s;
-            }
-
-
-        }
+    .container_button_fond_bag_Two{
+        margin-left:10px;
+        transition-duration: 1s;
+    }
 
 }

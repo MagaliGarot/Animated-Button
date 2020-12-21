@@ -1,7 +1,6 @@
 /*-----------VAR-----------*/
 /*-BORDER-*/
 /*-COLOR-*/
-/*-TEXT-*/
 /*-----------@Mixin-----------*/
 /*-----------ALL-----------*/
 * {
@@ -47,6 +46,11 @@ body {
   margin-top: 400px;
   /*1 mettre transition sur element princiaple*/
   /*Ensuite faire l'appel dans le hover*/
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  background: white;
   /*fond yellow light*/
 }
 
@@ -61,6 +65,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background: #f1d080;
+  pointer-events: none;
   /*PICTURE BED*/
   background-image: url("Picture/green_double-room_icon-icons.com_59398-icon-icons.com.png");
   background-repeat: no-repeat;
@@ -79,6 +84,10 @@ body {
   width: 60px;
   top: 30px;
   margin-right: 100px;
+  /*ANIM*/
+  /*ALL -> TOUT*/
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 .container_button .container_button_fond_bag_Two {
@@ -92,13 +101,22 @@ body {
   transition: all 1s ease-out;
 }
 
-.container_button .container_button_fond:hover .container_button_fond_bag_One {
+/*HOVER TOUJOURS EN DEHORS --> ATTENTION*/
+/*Pas plus de 2 agruments*/
+.container_button:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.container_button:hover .container_button_fond_bag_One {
   margin-right: 10px;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
 }
 
-.container_button .container_button_fond:hover .container_button_fond_bag_Two {
+.container_button:hover .container_button_fond_bag_Two {
   margin-left: 10px;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
