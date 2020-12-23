@@ -52,8 +52,7 @@ body {
 /*--------BODY--------*/
 
 #container_button{
-    // display:flex;
-    // align-items: center;
+  
     @include margin();
     width: 660px;
     height: 200px;
@@ -61,6 +60,7 @@ body {
     margin-top: 400px;
     /*1 mettre transition sur element princiaple*/
     /*Ensuite faire l'appel dans le hover*/
+    transition: all 1s ease-out;
     transition: transform 0.5s;
     @include color(background,white);
 
@@ -130,13 +130,40 @@ body {
 
 }
 
+@keyframes hopping{
+    /*ETAPE DE TRANSFORMATIONS*/
+ 0%{
+    transform: scale(1);
+ }
+
+ 25%{
+    transform: scale(0.98);
+ }
+
+ 50%{
+    transform: scale(1);
+ }
+
+ 75%{
+    transform: scale(0.98);
+}
+
+100%{
+    transform: scale(1);
+    }
+}
+
    /*HOVER TOUJOURS EN DEHORS --> ATTENTION*/
    /*Pas plus de 2 agruments*/
 
 
    #container_button:hover{
-        transform: scale(1.1);
-        transition-duration: 1s;
+    /*ANIMATION BUTTON KEYFRAME*/
+    animation-name: hopping;
+    animation-duration: 1s;
+    /*Permet un mouvement plus fluide*/
+    animation-timing-function: ease-in-out;
+    transition-duration: 1s;
 
     .container_button_fond{
         background-color: #6bceed;

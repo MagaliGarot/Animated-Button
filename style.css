@@ -42,6 +42,8 @@ body {
   margin-top: 400px;
   /*1 mettre transition sur element princiaple*/
   /*Ensuite faire l'appel dans le hover*/
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -114,11 +116,65 @@ body {
   transition: all 1s ease-out;
 }
 
+@-webkit-keyframes hopping {
+  /*ETAPE DE TRANSFORMATIONS*/
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes hopping {
+  /*ETAPE DE TRANSFORMATIONS*/
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 /*HOVER TOUJOURS EN DEHORS --> ATTENTION*/
 /*Pas plus de 2 agruments*/
 #container_button:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  /*ANIMATION BUTTON KEYFRAME*/
+  -webkit-animation-name: hopping;
+          animation-name: hopping;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  /*Permet un mouvement plus fluide*/
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
 }
