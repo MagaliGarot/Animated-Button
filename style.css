@@ -28,16 +28,12 @@ button {
 
 body {
   background: #f69703;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 /*--------BODY--------*/
-.container_button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+#container_button {
   margin-right: auto;
   margin-left: auto;
   width: 660px;
@@ -54,7 +50,19 @@ body {
   /*fond yellow light*/
 }
 
-.container_button .container_button_fond {
+#container_button .container_button_text {
+  text-align: right;
+}
+
+#container_button .container_button_text {
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-right: 90px;
+  padding-top: 80px;
+}
+
+#container_button .container_button_fond {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,12 +81,17 @@ body {
   background-position: center;
   width: 200px;
   height: 200px;
+  /*POSITION -> BACK ORANGE*/
+  margin-top: -128px;
   border-radius: 25px 0px 0px 25px;
   /*INVISIBLE*/
   overflow: hidden;
+  /*ANIM*/
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
-.container_button .container_button_fond_bag_One {
+#container_button .container_button_fond_bag_One {
   position: relative;
   z-index: 2;
   width: 60px;
@@ -90,7 +103,7 @@ body {
   transition: all 1s ease-out;
 }
 
-.container_button .container_button_fond_bag_Two {
+#container_button .container_button_fond_bag_Two {
   position: relative;
   z-index: 3;
   width: 70px;
@@ -103,20 +116,25 @@ body {
 
 /*HOVER TOUJOURS EN DEHORS --> ATTENTION*/
 /*Pas plus de 2 agruments*/
-.container_button:hover {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+#container_button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
 }
 
-.container_button:hover .container_button_fond_bag_One {
+#container_button:hover .container_button_fond {
+  background-color: #6bceed;
+  background-size: 90px;
+}
+
+#container_button:hover .container_button_fond_bag_One {
   margin-right: 10px;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
 }
 
-.container_button:hover .container_button_fond_bag_Two {
+#container_button:hover .container_button_fond_bag_Two {
   margin-left: 10px;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;

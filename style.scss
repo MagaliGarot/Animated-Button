@@ -46,13 +46,14 @@ button{
 
 body {
     @include color(background,#f69703);
+    transition: all 1s ease-out;
 }
 
 /*--------BODY--------*/
 
-.container_button{
-    display:flex;
-    align-items: center;
+#container_button{
+    // display:flex;
+    // align-items: center;
     @include margin();
     width: 660px;
     height: 200px;
@@ -62,6 +63,19 @@ body {
     /*Ensuite faire l'appel dans le hover*/
     transition: transform 0.5s;
     @include color(background,white);
+
+    .container_button_text{
+        text-align: right;
+    }
+
+    .container_button_text{
+        font-size: 2rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+
+        margin-right: 90px;
+        padding-top: 80px;
+    }
 
     /*fond yellow light*/
     .container_button_fond{
@@ -79,11 +93,15 @@ body {
         
         width: 200px;
         height: 200px;
+        /*POSITION -> BACK ORANGE*/
+        margin-top: -128px;
         
         border-radius: 25px 0px 0px 25px;
 
          /*INVISIBLE*/
          overflow: hidden;
+         /*ANIM*/
+         transition: all 1s ease-out;
     }
 
 
@@ -114,9 +132,16 @@ body {
 
    /*HOVER TOUJOURS EN DEHORS --> ATTENTION*/
    /*Pas plus de 2 agruments*/
-   .container_button:hover{
-    transform: scale(1.5);
-    transition-duration: 1s;
+
+
+   #container_button:hover{
+        transform: scale(1.1);
+        transition-duration: 1s;
+
+    .container_button_fond{
+        background-color: #6bceed;
+        background-size: 90px;
+    }
 
     .container_button_fond_bag_One{
         margin-right:10px;
@@ -129,3 +154,4 @@ body {
     }
 
 }
+
