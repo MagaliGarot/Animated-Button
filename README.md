@@ -4,7 +4,8 @@
  # Lien vers le projet :
  https://magaligarot.github.io/Animated-Button/
 
-<!-- ![Image du projet](Picture/captureprojet.png) -->
+![<Visuel>](Picture/capture-button.png)
+
 
 # Le projet :
 Réalisation d'un bouton d'après un wireframe existant réalisé par [Mauricio Bucardo](https://dribbble.com/maubucardo). Le but étant de reproduire au maximum le concept, tout en essayant de trouver les ressources externes sur le web (images, font, etc). 
